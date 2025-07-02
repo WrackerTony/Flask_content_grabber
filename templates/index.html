@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Void Platform Downloader</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="menu">
+            <span class="logo">Void Platform Downloader</span>
+            <div class="supported-dropdown">
+                <button class="supported-btn" type="button" onclick="document.getElementById('supported-list').classList.toggle('show')">
+                    Supported Platforms ▼
+                </button>
+                <ul id="supported-list" class="supported-list">
+                    <li>YouTube</li>
+                    <li>SoundCloud</li>
+                    <li>Vimeo</li>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>TikTok</li>
+                    <li>Instagram</li>
+                    <li style="border-top:1px solid #ff003c; margin-top:0.5rem; padding-top:0.5rem;">
+                        <a href="https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md" target="_blank" style="color:#ff003c; text-decoration:underline; font-size:0.95rem;">See all supported sites</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <h1>Download from your favorite platform</h1>
+        <form method="post" enctype="multipart/form-data">
+            <input type="text" name="url" placeholder="Paste video URL here..." required>
+            <div class="format-select">
+                <label><input type="radio" name="format" value="mp3" checked> MP3</label>
+                <label><input type="radio" name="format" value="mp4"> MP4</label>
+            </div>
+            <button type="submit">Download</button>
+        </form>
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+    </div>
+</body>
+<script>
+// Simple dropdown toggle for supported platforms
+window.onclick = function(event) {
+    if (!event.target.matches('.supported-btn')) {
+        var dropdowns = document.getElementsByClassName('supported-list');
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+</script>
+</html>
