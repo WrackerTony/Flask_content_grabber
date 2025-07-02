@@ -86,16 +86,3 @@ python app.py
 <br>
 
 <h2 align="center" style="color:#e53935; animation: popin 1.2s cubic-bezier(.68,-0.55,.27,1.55);">This project is <b>F****** amazing</b>. 🚀🔥</h2>
-
-<style>
-@keyframes popin {
-  0% { transform: scale(0.7); opacity: 0; }
-  80% { transform: scale(1.05); opacity: 1; }
-  100% { transform: scale(1); }
-}
-@keyframes fadein {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-</style>
-
